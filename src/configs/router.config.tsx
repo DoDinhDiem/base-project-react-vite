@@ -1,3 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-export const router = createBrowserRouter([]);
+import AdminLayout from '@/pages/clients/components/layout';
+import HomePage from '@/pages/clients/home/page';
+
+export const router = createBrowserRouter([
+  {
+    path: '',
+    element: <AdminLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+    ],
+  },
+]);
